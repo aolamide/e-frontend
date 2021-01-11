@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import './pagination.css'
 
-
-const getButtonPages = (c, m) => {
+const getButtonPages = (c, e) => {
   let current = c,
-      last = m,
-      delta = 1,
+      last = e,
+      delta = 1, //number of pages to show to left and right
       left = current - delta,
       right = current + delta + 1,
       range = [],
@@ -34,18 +34,17 @@ const getButtonPages = (c, m) => {
 
 const Pagination = ({ currentPage, lastPage, setCurrentPage }) => {
   const [pagesToDisplay, setPagesToDisplay] = useState([]); 
-
   useEffect(() => {
     setPagesToDisplay(getButtonPages(currentPage, lastPage))
   }, [currentPage, lastPage])
 
   return (
     <div className='pagination'>
-      <button disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>&laquo;</button>
+      <button title='Previous page' disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>&laquo;</button>
       {
-        pagesToDisplay.map(p => <button disabled={p === '...'} onClick={() => setCurrentPage(p)} className={currentPage === p ? 'active' : ''} key={p}>{p}</button>)
+        pagesToDisplay.map(p => <button title={`Page ${p}`} disabled={p === '...'} onClick={() => setCurrentPage(p)} className={currentPage === p ? 'active' : ''} key={p}>{p}</button>)
       }
-      <button disabled={currentPage === lastPage} onClick={() => setCurrentPage(currentPage + 1)}>&raquo;</button>
+      <button title='Next page' disabled={currentPage === lastPage} onClick={() => setCurrentPage(currentPage + 1)}>&raquo;</button>
     </div>
   )
 } 
