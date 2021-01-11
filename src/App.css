@@ -1,35 +1,13 @@
+.flex {
+  display : flex;
+}
+.flex-between {
+  justify-content: space-between;
+}
 .card-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  min-height: 40vh;
 }
-
-.user-card {
-  border : 2px solid red;
-  width : 300px;
-  margin: 10px;
-  padding: 10px;
-}
-
-/* //pagination */
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin: 20px;
-}
-
-.pagination button {
-  color: black;
-  padding: 10px 18px;
-  font-weight: bold;
-  transition: background-color .5s;
-  background-color: white;
-}
-
-.pagination button.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.pagination button:hover:not(.active):not(:disabled) {background-color: #ddd;}
