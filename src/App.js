@@ -1,13 +1,10 @@
 import './App.css';
-import Screen from './Screen';
+import MainPage from './pages/MainPage';
 
 const App = () => {
-  
   return (
-    <div className="App">
-      <Screen />
-    </div>
-  );
+    <MainPage />
+  )
 }
 
 export default App;
