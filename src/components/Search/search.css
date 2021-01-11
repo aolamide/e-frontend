@@ -1,0 +1,8 @@
+.search-container input {
+  padding: 10px;
+  border-radius: 7px;
+  width: 250px;
+  border : 1px solid #1970d6;
+  display: block;
+  margin: 12px auto;
+}
