@@ -36,7 +36,7 @@ const MainPage = () => {
     //Set loading to true
     setFetching(true);
     //Fetch records
-    fetch('http://api.enye.tech/v1/challenge/records')
+    fetch('https://api.enye.tech/v1/challenge/records')
     .then(res => res.json())
     .then(data => {
       if(data.status === 'success') {
